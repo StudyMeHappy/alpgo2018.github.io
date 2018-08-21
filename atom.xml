@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://alpgo.cc/"/>
+  <updated>2018-08-21T03:07:19.000Z</updated>
+  <id>http://alpgo.cc/</id>
+  
+  <author>
+    <name>John Doe</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Asahi Second Post</title>
+    <link href="http://alpgo.cc/2018/08/21/Asahi-Second-Post/"/>
+    <id>http://alpgo.cc/2018/08/21/Asahi-Second-Post/</id>
+    <published>2018-08-21T03:03:35.000Z</published>
+    <updated>2018-08-21T03:07:19.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>これは日本語のテストポストてす、以上。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;これは日本語のテストポストてす、以上。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Asahi First Post</title>
+    <link href="http://alpgo.cc/2018/08/21/Asahi-First-Post/"/>
+    <id>http://alpgo.cc/2018/08/21/Asahi-First-Post/</id>
+    <published>2018-08-21T01:22:18.000Z</published>
+    <updated>2018-08-21T02:07:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>This is the first post</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;This is the first post&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://alpgo.cc/2018/08/21/hello-world/"/>
+    <id>http://alpgo.cc/2018/08/21/hello-world/</id>
+    <published>2018-08-21T01:00:00.000Z</published>
+    <updated>2018-08-21T02:07:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to alpgo.cc</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to alpgo.cc&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
