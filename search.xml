@@ -1,9 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Use hexo and github to build blog site]]></title>
+    <url>%2F2018%2F08%2F24%2FUse-hexo-and-github-to-build-blog%2F</url>
+    <content type="text"><![CDATA[What we need Github account Node.js Hexo Domain (If you have not a domain, you can just use the xxx.github.io) … Create your git repositoryGo to github, and create a repository named xxx.github.io (‘xxx’ means your username). NextTBD]]></content>
+      <tags>
+        <tag>Github</tag>
+        <tag>hexo</tag>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[About chrome default minimum font size]]></title>
+    <url>%2F2018%2F08%2F23%2FAbout-chrome-default-minimum-font-size%2F</url>
+    <content type="text"><![CDATA[In chrome settings, there are a default minimum font size setting. On Windows and Mac OS X, there are maybe 12px. So, when your page’s css font size value &lt; 12px, there will display 12px. To change the minimum font size in Chrome go to: 123settings &gt; advanced settings &gt; web content &gt; font size &gt; customise fonts&gt; scroll down to the bottom and you will see the &apos;minimum font size&apos; slider. 以上。]]></content>
+      <categories>
+        <category>Frontend</category>
+      </categories>
+      <tags>
+        <tag>Chrome</tag>
+        <tag>font-size</tag>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Github commit message fix issue isuee]]></title>
+    <url>%2F2018%2F08%2F23%2FGithub-commit-message-fix-issue-isuee%2F</url>
+    <content type="text"><![CDATA[About the git message, following keywords, followed by an issue number, will close the issue: close closes closed fix fixes fixed resolve resolves resolved If you do not want to close the issue, please mind the commit message. 1fix(fronted): fix issue #123 (If you close the issue without QA check…) 以上。]]></content>
+      <categories>
+        <category>Project</category>
+      </categories>
+      <tags>
+        <tag>Github</tag>
+        <tag>Gitlab</tag>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[About how to fix element ui form item component validator message i18n issue]]></title>
     <url>%2F2018%2F08%2F22%2FAbout-how-to-fix-element-ui-form-item-component-validator-message-i18n-issue%2F</url>
     <content type="text"><![CDATA[Overwrite the form-item component and add $t() on template. The component file path is PROJECT_PATH/node_modules/element-ui/packages/form/src/form-item.vue Copy that and overwrite it on your project, then change the code, In line 26, use the $t to do the i18n. 1234567891011121314151617181920212223242526272829303132&lt;template&gt; &lt;div class="el-form-item" :class="[&#123; 'el-form-item--feedback': elForm &amp;&amp; elForm.statusIcon, 'is-error': validateState === 'error', 'is-validating': validateState === 'validating', 'is-success': validateState === 'success', 'is-required': isRequired || required &#125;, sizeClass ? 'el-form-item--' + sizeClass : '' ]"&gt; &lt;label :for="labelFor" class="el-form-item__label" v-bind:style="labelStyle" v-if="label || $slots.label"&gt; &lt;slot name="label"&gt;&#123;&#123;label + form.labelSuffix&#125;&#125;&lt;/slot&gt; &lt;/label&gt; &lt;div class="el-form-item__content" v-bind:style="contentStyle"&gt; &lt;slot&gt;&lt;/slot&gt; &lt;transition name="el-zoom-in-top"&gt; &lt;div v-if="validateState === 'error' &amp;&amp; showMessage &amp;&amp; form.showMessage" class="el-form-item__error" :class="&#123; 'el-form-item__error--inline': typeof inlineMessage === 'boolean' ? inlineMessage : (elForm &amp;&amp; elForm.inlineMessage || false) &#125;" &gt;- &#123;&#123; validateMessage &#125;&#125;+ &#123;&#123; $t(validateMessage) &#125;&#125; &lt;/div&gt; &lt;/transition&gt; &lt;/div&gt; &lt;/div&gt;&lt;/template&gt; By the way, if you change the code like this, you need send the i18n key as message value. Like this, index.vue12345rules: &#123; name: [ &#123; required: true, message: 'nameRequired', trigger: 'blur' &#125; ]&#125; en.js123module.exports = &#123; nameRequired: 'Please input the name'&#125; zh.js123module.exports = &#123; nameRequired: '请输入姓名'&#125; 以上。]]></content>
+      <categories>
+        <category>Frontend</category>
+      </categories>
       <tags>
         <tag>ElementUI</tag>
         <tag>Vue.js</tag>
