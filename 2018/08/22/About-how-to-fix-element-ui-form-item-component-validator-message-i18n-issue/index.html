@@ -112,17 +112,19 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://alpgo.cc/categories/index.html">
+  <meta name="description" content="Overwrite the form-item component and add  $t() on template. The component file path is PROJECT_PATH/node_modules/element-ui/packages/form/src/form-item.vue Copy that and overwrite it on your project,">
+<meta name="keywords" content="ElementUI,Vue.js,i18n">
+<meta property="og:type" content="article">
+<meta property="og:title" content="About how to fix element ui form item component validator message i18n issue">
+<meta property="og:url" content="http://alpgo.cc/2018/08/22/About-how-to-fix-element-ui-form-item-component-validator-message-i18n-issue/index.html">
 <meta property="og:site_name" content="ALPGO">
+<meta property="og:description" content="Overwrite the form-item component and add  $t() on template. The component file path is PROJECT_PATH/node_modules/element-ui/packages/form/src/form-item.vue Copy that and overwrite it on your project,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-21T04:40:47.000Z">
+<meta property="og:updated_time" content="2018-08-22T08:29:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
+<meta name="twitter:title" content="About how to fix element ui form item component validator message i18n issue">
+<meta name="twitter:description" content="Overwrite the form-item component and add  $t() on template. The component file path is PROJECT_PATH/node_modules/element-ui/packages/form/src/form-item.vue Copy that and overwrite it on your project,">
 
-
-  
 
 
   <link rel="alternate" href="/atom.xml" title="ALPGO" type="application/atom+xml" />
@@ -130,7 +132,7 @@
 
 
 
-  <link rel="canonical" href="http://alpgo.cc/categories/"/>
+  <link rel="canonical" href="http://alpgo.cc/2018/08/22/About-how-to-fix-element-ui-form-item-component-validator-message-i18n-issue/"/>
 
 
 
@@ -140,7 +142,7 @@
   };
 </script>
 
-  <title>categories | ALPGO</title>
+  <title>About how to fix element ui form item component validator message i18n issue | ALPGO</title>
   
 
 
@@ -248,7 +250,7 @@
         
         
           
-          <li class="menu-item menu-item-categories menu-item-active">
+          <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
   </li>
@@ -268,25 +270,6 @@
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -337,61 +320,183 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://alpgo.cc/2018/08/22/About-how-to-fix-element-ui-form-item-component-validator-message-i18n-issue/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Asahi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ALPGO">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">categories</h1>
-
-<div class="post-meta">
-  
-  
-
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                
-                
-                  
-                    
-                  
-                
-                1 category in total
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Testing/">Testing</a><span class="category-list-count">4</span></li></ul>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">About how to fix element ui form item component validator message i18n issue
+              
+            
+          </h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-08-22 12:22:33" itemprop="dateCreated datePublished" datetime="2018-08-22T12:22:33+08:00">2018-08-22</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>Overwrite the form-item component and add  <code>$t()</code> on template.</p>
+<p>The component file path is</p>
+<p><code>PROJECT_PATH/node_modules/element-ui/packages/form/src/form-item.vue</code></p>
+<p>Copy that and overwrite it on your project, then change the code,</p>
+<p>In line 26, use the <code>$t</code> to do the i18n.</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class="el-form-item" :class="[&#123;</span><br><span class="line">      'el-form-item--feedback': elForm &amp;&amp; elForm.statusIcon,</span><br><span class="line">      'is-error': validateState <span class="comment">=== 'error',</span></span><br><span class="line">      'is-validating': validateState <span class="comment">=== 'validating',</span></span><br><span class="line">      'is-success': validateState <span class="comment">=== 'success',</span></span><br><span class="line">      'is-required': isRequired || required</span><br><span class="line">    &#125;,</span><br><span class="line">    sizeClass ? 'el-form-item--' + sizeClass : ''</span><br><span class="line">  ]"&gt;</span><br><span class="line">    &lt;label :for="labelFor" class="el-form-item__label" v-bind:style="labelStyle" v-if="label || $slots.label"&gt;</span><br><span class="line">      &lt;slot name="label"&gt;&#123;&#123;label + form.labelSuffix&#125;&#125;&lt;/slot&gt;</span><br><span class="line">    &lt;/label&gt;</span><br><span class="line">    &lt;div class="el-form-item__content" v-bind:style="contentStyle"&gt;</span><br><span class="line">      &lt;slot&gt;&lt;/slot&gt;</span><br><span class="line">      &lt;transition name="el-zoom-in-top"&gt;</span><br><span class="line">        &lt;div</span><br><span class="line">          v-if="validateState <span class="comment">=== 'error' &amp;&amp; showMessage &amp;&amp; form.showMessage"</span></span><br><span class="line">          class="el-form-item__error"</span><br><span class="line">          :class="&#123;</span><br><span class="line">            'el-form-item__error--inline': typeof inlineMessage <span class="comment">=== 'boolean'</span></span><br><span class="line">              ? inlineMessage</span><br><span class="line">              : (elForm &amp;&amp; elForm.inlineMessage || false)</span><br><span class="line">          &#125;"</span><br><span class="line">        &gt;</span><br><span class="line"><span class="deletion">-          &#123;&#123; validateMessage &#125;&#125;</span></span><br><span class="line"><span class="addition">+          &#123;&#123; $t(validateMessage) &#125;&#125;</span></span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &lt;/transition&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+<p>By the way, if you change the code like this, you need send the i18n key as message value.</p>
+<p>Like this,</p>
+<figure class="highlight js"><figcaption><span>index.vue</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rules: &#123;</span><br><span class="line">  name: [</span><br><span class="line">    &#123; <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">message</span>: <span class="string">'nameRequired'</span>, <span class="attr">trigger</span>: <span class="string">'blur'</span> &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><figcaption><span>en.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  nameRequired: <span class="string">'Please input the name'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><figcaption><span>zh.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  nameRequired: <span class="string">'请输入姓名'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上。</p>
+
       
     </div>
-    
-
-
 
     
+
     
     
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ElementUI/" rel="tag"># ElementUI</a>
+          
+            <a href="/tags/Vue-js/" rel="tag"># Vue.js</a>
+          
+            <a href="/tags/i18n/" rel="tag"># i18n</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/21/Comments-Test-Page/" rel="next" title="聊天评论测试用页面">
+                <i class="fa fa-chevron-left"></i> 聊天评论测试用页面
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
   </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zOTEzNC8xNTY2MQ=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -662,6 +767,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 

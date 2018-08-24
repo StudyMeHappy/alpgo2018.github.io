@@ -1,27 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>ALPGO</title>
   
   
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://alpgo.cc/"/>
-  <updated>2018-08-21T03:07:19.000Z</updated>
+  <updated>2018-08-22T08:29:40.000Z</updated>
   <id>http://alpgo.cc/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>Asahi</name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>About how to fix element ui form item component validator message i18n issue</title>
+    <link href="http://alpgo.cc/2018/08/22/About-how-to-fix-element-ui-form-item-component-validator-message-i18n-issue/"/>
+    <id>http://alpgo.cc/2018/08/22/About-how-to-fix-element-ui-form-item-component-validator-message-i18n-issue/</id>
+    <published>2018-08-22T04:22:33.000Z</published>
+    <updated>2018-08-22T08:29:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Overwrite the form-item component and add  <code>$t()</code> on template.</p><p>The component file path is</p><p><code>PROJECT_PATH/node_modules/element-ui/packages/form/src/form-item.vue</code></p><p>Copy that and overwrite it on your project, then change the code,</p><p>In line 26, use the <code>$t</code> to do the i18n.</p><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class="el-form-item" :class="[&#123;</span><br><span class="line">      'el-form-item--feedback': elForm &amp;&amp; elForm.statusIcon,</span><br><span class="line">      'is-error': validateState <span class="comment">=== 'error',</span></span><br><span class="line">      'is-validating': validateState <span class="comment">=== 'validating',</span></span><br><span class="line">      'is-success': validateState <span class="comment">=== 'success',</span></span><br><span class="line">      'is-required': isRequired || required</span><br><span class="line">    &#125;,</span><br><span class="line">    sizeClass ? 'el-form-item--' + sizeClass : ''</span><br><span class="line">  ]"&gt;</span><br><span class="line">    &lt;label :for="labelFor" class="el-form-item__label" v-bind:style="labelStyle" v-if="label || $slots.label"&gt;</span><br><span class="line">      &lt;slot name="label"&gt;&#123;&#123;label + form.labelSuffix&#125;&#125;&lt;/slot&gt;</span><br><span class="line">    &lt;/label&gt;</span><br><span class="line">    &lt;div class="el-form-item__content" v-bind:style="contentStyle"&gt;</span><br><span class="line">      &lt;slot&gt;&lt;/slot&gt;</span><br><span class="line">      &lt;transition name="el-zoom-in-top"&gt;</span><br><span class="line">        &lt;div</span><br><span class="line">          v-if="validateState <span class="comment">=== 'error' &amp;&amp; showMessage &amp;&amp; form.showMessage"</span></span><br><span class="line">          class="el-form-item__error"</span><br><span class="line">          :class="&#123;</span><br><span class="line">            'el-form-item__error--inline': typeof inlineMessage <span class="comment">=== 'boolean'</span></span><br><span class="line">              ? inlineMessage</span><br><span class="line">              : (elForm &amp;&amp; elForm.inlineMessage || false)</span><br><span class="line">          &#125;"</span><br><span class="line">        &gt;</span><br><span class="line"><span class="deletion">-          &#123;&#123; validateMessage &#125;&#125;</span></span><br><span class="line"><span class="addition">+          &#123;&#123; $t(validateMessage) &#125;&#125;</span></span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &lt;/transition&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure><p>By the way, if you change the code like this, you need send the i18n key as message value.</p><p>Like this,</p><figure class="highlight js"><figcaption><span>index.vue</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rules: &#123;</span><br><span class="line">  name: [</span><br><span class="line">    &#123; <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">message</span>: <span class="string">'nameRequired'</span>, <span class="attr">trigger</span>: <span class="string">'blur'</span> &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight js"><figcaption><span>en.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  nameRequired: <span class="string">'Please input the name'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight js"><figcaption><span>zh.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  nameRequired: <span class="string">'请输入姓名'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>以上。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Overwrite the form-item component and add  &lt;code&gt;$t()&lt;/code&gt; on template.&lt;/p&gt;
+&lt;p&gt;The component file path is&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;PROJECT_PATH/nod
+      
+    
+    </summary>
+    
+    
+      <category term="ElementUI" scheme="http://alpgo.cc/tags/ElementUI/"/>
+    
+      <category term="Vue.js" scheme="http://alpgo.cc/tags/Vue-js/"/>
+    
+      <category term="i18n" scheme="http://alpgo.cc/tags/i18n/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>聊天评论测试用页面</title>
+    <link href="http://alpgo.cc/2018/08/21/Comments-Test-Page/"/>
+    <id>http://alpgo.cc/2018/08/21/Comments-Test-Page/</id>
+    <published>2018-08-21T06:38:08.000Z</published>
+    <updated>2018-08-21T07:01:39.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>本页面为评论测试用页面，以上。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;本页面为评论测试用页面，以上。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="Testing" scheme="http://alpgo.cc/categories/Testing/"/>
+    
+    
+      <category term="Testing" scheme="http://alpgo.cc/tags/Testing/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Asahi Second Post</title>
     <link href="http://alpgo.cc/2018/08/21/Asahi-Second-Post/"/>
     <id>http://alpgo.cc/2018/08/21/Asahi-Second-Post/</id>
     <published>2018-08-21T03:03:35.000Z</published>
-    <updated>2018-08-21T03:07:19.000Z</updated>
+    <updated>2018-08-21T07:01:39.000Z</updated>
     
     <content type="html"><![CDATA[<p>これは日本語のテストポストてす、以上。</p>]]></content>
     
@@ -35,6 +90,10 @@
     
     </summary>
     
+      <category term="Testing" scheme="http://alpgo.cc/categories/Testing/"/>
+    
+    
+      <category term="Testing" scheme="http://alpgo.cc/tags/Testing/"/>
     
   </entry>
   
@@ -43,7 +102,7 @@
     <link href="http://alpgo.cc/2018/08/21/Asahi-First-Post/"/>
     <id>http://alpgo.cc/2018/08/21/Asahi-First-Post/</id>
     <published>2018-08-21T01:22:18.000Z</published>
-    <updated>2018-08-21T02:07:44.000Z</updated>
+    <updated>2018-08-21T07:01:39.000Z</updated>
     
     <content type="html"><![CDATA[<p>This is the first post</p>]]></content>
     
@@ -57,6 +116,10 @@
     
     </summary>
     
+      <category term="Testing" scheme="http://alpgo.cc/categories/Testing/"/>
+    
+    
+      <category term="Testing" scheme="http://alpgo.cc/tags/Testing/"/>
     
   </entry>
   
@@ -65,7 +128,7 @@
     <link href="http://alpgo.cc/2018/08/21/hello-world/"/>
     <id>http://alpgo.cc/2018/08/21/hello-world/</id>
     <published>2018-08-21T01:00:00.000Z</published>
-    <updated>2018-08-21T02:07:30.000Z</updated>
+    <updated>2018-08-21T07:01:08.000Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to alpgo.cc</p>]]></content>
     
@@ -79,6 +142,10 @@
     
     </summary>
     
+      <category term="Testing" scheme="http://alpgo.cc/categories/Testing/"/>
+    
+    
+      <category term="Testing" scheme="http://alpgo.cc/tags/Testing/"/>
     
   </entry>
   
