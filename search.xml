@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[每周分享第1期]]></title>
+    <url>%2F2018%2F09%2F14%2F1%2F</url>
+    <content type="text"><![CDATA[代码 CodeCSSCSS的概念参见wiki：层叠样式表 关于CSS浏览器适配关于浏览器的适配，不同的浏览器在CSS上的写法可能有点不一样。 1234567.label-size-container &#123; display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */ display: -moz-box; /* OLD - Firefox 19- (doesn't work very well) */ display: -ms-flexbox; /* TWEENER - IE 10 */ display: -webkit-flex; /* NEW - Chrome */ display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */&#125; 如上所示，关于flex的设置，不同的浏览器写法也不同。 所以，实际开发时，为了避免浪费开发时间来写这些东西，我们一般会使用SASS等工具方便我们进行开发，提高开发效率。 关于SASS推荐参考阮一峰的网络日志 通过CSS hack进行的浏览器适配参考：CSDN freshlover的博客专栏《史上最全CSS Hack方式一览》 HTMLENT, BOM, WINDOW 有什么区别? DOM 是为了操作文档出现的 API，document 是其的一个对象；BOM 是为了操作浏览器出现的 API，window 是其的一个对象。 参考：DOM, DOCUMENT, BOM, WINDOW 有什么区别? - Vkki的回答 - 知乎 JavaScriptJavaScript Source Map参考：JavaScript Source Map 详解 - 阮一峰的网络日志 Vue.js理解 $nextTick 的作用参考：理解 $nextTick 的作用 Render 函数参考：Vuejs2.0学习之二（Render函数,createElement，vm.$slots，函数化组件，模板编译，JSX） 科技 Technology生活 Life语言 Language]]></content>
+      <categories>
+        <category>Weekly Journal</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[前端开发中的一些注意点]]></title>
     <url>%2F2018%2F09%2F07%2FSome-frontend-tips%2F</url>
     <content type="text"><![CDATA[前端开发中的一些注意点框架选择选择框架时应该考虑的问题 浏览器兼容问题，比如Vue.js是不能适配IE8及iE8以下版本的，如果要考虑IE8的兼容性，应该考虑更换其他框架 测试框架 单元测试 代码在一开始编写的时候是很简单的，但是随着开发进程会变得越来越复杂 正在研究如何使用Mocha JS部分 命名规范，驼峰命名 分工时同样的变量在不同页面的命名可能会不一样，这个不好，如开始时间的变量命名为startTime，另一个页面肯能是start、startDate，这种情况可能会造成后期维护上的多余负担，建议定期对变量名的命名进行一次check 提高代码复用性，不要写功能相似的多余代码，比如使用vue-i18n时有自带的日期国际化函数，可以直接调用，有的页面写的时候不清楚这一点，重写写了类似功能的代码，结果最后又改成一样的，费力又不讨好，这种情况应该避免 个人觉得结对编程对提高代码质量和减少低级错误的发生率有很大好处 UI部分 css的公用问题，关于这一点由于前端会使用UI框架，所以主要通过重写UI框架的内部样式来实现，具体是每个页面单独重写还是整体重写需要根据情况考虑，但是如果在代码写完之后再来做这个工作的话，会很难受，往往就会妥协、搁置下来 关于scss，最好单独写一个scss文件，不同层级设置不同的公用scss文件，单个页面也配置单独的scss文件，这样可以比较好的解决scss的复用问题 浏览器部分 最近写css的时候发现一个问题，Chrome有一个默认的最小显示字体的设置，在Windows与MacOSX中，大概是12px。这意味着如果css设置字体大小font-size小于12px，在Chrome浏览器上显示的仍然是12px]]></content>

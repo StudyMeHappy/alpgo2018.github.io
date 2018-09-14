@@ -308,6 +308,182 @@ border-left-color: #1E92FB;    /*左边框颜色*/
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://alpgo.cc/2018/09/14/1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Asahi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ALPGO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/14/1/" itemprop="url">每周分享第1期</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-14T13:25:51+08:00">
+                2018-09-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Weekly-Journal/" itemprop="url" rel="index">
+                    <span itemprop="name">Weekly Journal</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/14/1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/14/1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/09/14/1/" class="leancloud_visitors" data-flag-title="每周分享第1期">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="代码-Code"><a href="#代码-Code" class="headerlink" title="代码 Code"></a>代码 Code</h1><h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h3 id="CSS的概念"><a href="#CSS的概念" class="headerlink" title="CSS的概念"></a>CSS的概念</h3><p>参见wiki：<a href="https://zh.wikipedia.org/wiki/%E5%B1%82%E5%8F%A0%E6%A0%B7%E5%BC%8F%E8%A1%A8" target="_blank" rel="noopener">层叠样式表</a></p>
+<h3 id="关于CSS浏览器适配"><a href="#关于CSS浏览器适配" class="headerlink" title="关于CSS浏览器适配"></a>关于CSS浏览器适配</h3><p>关于浏览器的适配，不同的浏览器在CSS上的写法可能有点不一样。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.label-size-container</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: -webkit-box;           <span class="comment">/* OLD - iOS 6-, Safari 3.1-6 */</span></span><br><span class="line">  <span class="attribute">display</span>: -moz-box;              <span class="comment">/* OLD - Firefox 19- (doesn't work very well) */</span></span><br><span class="line">  <span class="attribute">display</span>: -ms-flexbox;           <span class="comment">/* TWEENER - IE 10 */</span></span><br><span class="line">  <span class="attribute">display</span>: -webkit-flex;          <span class="comment">/* NEW - Chrome */</span></span><br><span class="line">  <span class="attribute">display</span>: flex;                  <span class="comment">/* NEW, Spec - Opera 12.1, Firefox 20+ */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如上所示，关于flex的设置，不同的浏览器写法也不同。</p>
+<p>所以，实际开发时，为了避免浪费开发时间来写这些东西，我们一般会使用<a href="https://zh.wikipedia.org/wiki/Sass" target="_blank" rel="noopener">SASS</a>等工具方便我们进行开发，提高开发效率。</p>
+<p>关于SASS推荐参考<a href="http://www.ruanyifeng.com/blog/2012/06/sass.html" target="_blank" rel="noopener">阮一峰的网络日志</a></p>
+<h3 id="通过CSS-hack进行的浏览器适配"><a href="#通过CSS-hack进行的浏览器适配" class="headerlink" title="通过CSS hack进行的浏览器适配"></a>通过CSS hack进行的浏览器适配</h3><p>参考：CSDN freshlover的博客专栏《<a href="http://blog.csdn.net/freshlover/article/details/12132801" target="_blank" rel="noopener">史上最全CSS Hack方式一览</a>》</p>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="ENT-BOM-WINDOW-有什么区别"><a href="#ENT-BOM-WINDOW-有什么区别" class="headerlink" title="ENT, BOM, WINDOW 有什么区别?"></a>ENT, BOM, WINDOW 有什么区别?</h3><blockquote>
+<p>DOM 是为了操作文档出现的 API，document 是其的一个对象；<br>BOM 是为了操作浏览器出现的 API，window 是其的一个对象。</p>
+</blockquote>
+<p>参考：<a href="https://www.zhihu.com/question/33453164/answer/56549408" target="_blank" rel="noopener">DOM, DOCUMENT, BOM, WINDOW 有什么区别? - Vkki的回答 - 知乎</a></p>
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><h3 id="JavaScript-Source-Map"><a href="#JavaScript-Source-Map" class="headerlink" title="JavaScript Source Map"></a>JavaScript Source Map</h3><p>参考：<a href="https://www.zhihu.com/question/33453164/answer/56549408" target="_blank" rel="noopener">JavaScript Source Map 详解 - 阮一峰的网络日志</a></p>
+<h2 id="Vue-js"><a href="#Vue-js" class="headerlink" title="Vue.js"></a>Vue.js</h2><h3 id="理解-nextTick-的作用"><a href="#理解-nextTick-的作用" class="headerlink" title="理解 $nextTick 的作用"></a>理解 $nextTick 的作用</h3><p>参考：<a href="https://blog.csdn.net/sinat_17775997/article/details/71638144" target="_blank" rel="noopener">理解 $nextTick 的作用</a></p>
+<h3 id="Render-函数"><a href="#Render-函数" class="headerlink" title="Render 函数"></a>Render 函数</h3><p>参考：<a href="https://blog.csdn.net/kkae8643150/article/details/52910389" target="_blank" rel="noopener">Vuejs2.0学习之二（Render函数,createElement，vm.$slots，函数化组件，模板编译，JSX）</a></p>
+<h1 id="科技-Technology"><a href="#科技-Technology" class="headerlink" title="科技 Technology"></a>科技 Technology</h1><h1 id="生活-Life"><a href="#生活-Life" class="headerlink" title="生活 Life"></a>生活 Life</h1><h1 id="语言-Language"><a href="#语言-Language" class="headerlink" title="语言 Language"></a>语言 Language</h1>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://alpgo.cc/2018/09/07/Some-frontend-tips/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2001,190 +2177,6 @@ border-left-color: #1E92FB;    /*左边框颜色*/
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://alpgo.cc/2018/08/24/Use-hexo-and-github-to-build-blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Asahi">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ALPGO">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/24/Use-hexo-and-github-to-build-blog/" itemprop="url">Use hexo and github to build blog site</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-24T15:37:53+08:00">
-                2018-08-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Frontend/" itemprop="url" rel="index">
-                    <span itemprop="name">Frontend</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Frontend/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/08/24/Use-hexo-and-github-to-build-blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/08/24/Use-hexo-and-github-to-build-blog/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/08/24/Use-hexo-and-github-to-build-blog/" class="leancloud_visitors" data-flag-title="Use hexo and github to build blog site">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="What-we-need"><a href="#What-we-need" class="headerlink" title="What we need"></a>What we need</h2><ul>
-<li>Github account</li>
-<li>Node.js</li>
-<li>Hexo</li>
-<li>Domain (If you have not a domain, you can just use the xxx.github.io)</li>
-<li>…</li>
-</ul>
-<h2 id="Create-your-git-repository"><a href="#Create-your-git-repository" class="headerlink" title="Create your git repository"></a>Create your git repository</h2><p>Go to github, and create a repository named xxx.github.io (‘xxx’ means your username).</p>
-<h2 id="Clone-project-to-your-disk"><a href="#Clone-project-to-your-disk" class="headerlink" title="Clone project to your disk"></a>Clone project to your disk</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:xxx/xxx.github.io</span><br></pre></td></tr></table></figure>
-<h2 id="Install-Node-js"><a href="#Install-Node-js" class="headerlink" title="Install Node.js"></a>Install Node.js</h2><p>Look <a href="https://nodejs.org/" target="_blank" rel="noopener">nodejs.org</a></p>
-<h2 id="Install-hexo"><a href="#Install-hexo" class="headerlink" title="Install hexo"></a>Install hexo</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo</span><br></pre></td></tr></table></figure>
-<h2 id="TBD"><a href="#TBD" class="headerlink" title="TBD"></a>TBD</h2>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2235,7 +2227,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2246,7 +2238,7 @@ border-left-color: #1E92FB;    /*左边框颜色*/
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
