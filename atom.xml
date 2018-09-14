@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://alpgo.cc/"/>
-  <updated>2018-08-24T09:04:00.000Z</updated>
+  <updated>2018-09-07T04:18:06.000Z</updated>
   <id>https://alpgo.cc/</id>
   
   <author>
@@ -17,13 +17,285 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>前端开发中的一些注意点</title>
+    <link href="https://alpgo.cc/2018/09/07/Some-frontend-tips/"/>
+    <id>https://alpgo.cc/2018/09/07/Some-frontend-tips/</id>
+    <published>2018-09-07T04:17:12.000Z</published>
+    <updated>2018-09-07T04:18:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前端开发中的一些注意点"><a href="#前端开发中的一些注意点" class="headerlink" title="前端开发中的一些注意点"></a>前端开发中的一些注意点</h1><h2 id="框架选择"><a href="#框架选择" class="headerlink" title="框架选择"></a>框架选择</h2><h3 id="选择框架时应该考虑的问题"><a href="#选择框架时应该考虑的问题" class="headerlink" title="选择框架时应该考虑的问题"></a>选择框架时应该考虑的问题</h3><ul><li>浏览器兼容问题，比如Vue.js是不能适配IE8及iE8以下版本的，如果要考虑IE8的兼容性，应该考虑更换其他框架</li></ul><h3 id="测试框架"><a href="#测试框架" class="headerlink" title="测试框架"></a>测试框架</h3><ul><li>单元测试<ul><li>代码在一开始编写的时候是很简单的，但是随着开发进程会变得越来越复杂</li><li>正在研究如何使用Mocha</li></ul></li></ul><h2 id="JS部分"><a href="#JS部分" class="headerlink" title="JS部分"></a>JS部分</h2><ul><li>命名规范，驼峰命名</li><li>分工时同样的变量在不同页面的命名可能会不一样，这个不好，如开始时间的变量命名为startTime，另一个页面肯能是start、startDate，这种情况可能会造成后期维护上的多余负担，建议定期对变量名的命名进行一次check</li><li>提高代码复用性，不要写功能相似的多余代码，比如使用vue-i18n时有自带的日期国际化函数，可以直接调用，有的页面写的时候不清楚这一点，重写写了类似功能的代码，结果最后又改成一样的，费力又不讨好，这种情况应该避免</li><li>个人觉得结对编程对提高代码质量和减少低级错误的发生率有很大好处</li></ul><h2 id="UI部分"><a href="#UI部分" class="headerlink" title="UI部分"></a>UI部分</h2><ul><li>css的公用问题，关于这一点由于前端会使用UI框架，所以主要通过重写UI框架的内部样式来实现，具体是每个页面单独重写还是整体重写需要根据情况考虑，但是如果在代码写完之后再来做这个工作的话，会很难受，往往就会妥协、搁置下来</li><li>关于scss，最好单独写一个scss文件，不同层级设置不同的公用scss文件，单个页面也配置单独的scss文件，这样可以比较好的解决scss的复用问题</li></ul><h2 id="浏览器部分"><a href="#浏览器部分" class="headerlink" title="浏览器部分"></a>浏览器部分</h2><ul><li>最近写css的时候发现一个问题，Chrome有一个默认的最小显示字体的设置，在Windows与MacOSX中，大概是12px。这意味着如果css设置字体大小font-size小于12px，在Chrome浏览器上显示的仍然是12px</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;前端开发中的一些注意点&quot;&gt;&lt;a href=&quot;#前端开发中的一些注意点&quot; class=&quot;headerlink&quot; title=&quot;前端开发中的一些注意点&quot;&gt;&lt;/a&gt;前端开发中的一些注意点&lt;/h1&gt;&lt;h2 id=&quot;框架选择&quot;&gt;&lt;a href=&quot;#框架选择&quot; class=&quot;
+      
+    
+    </summary>
+    
+      <category term="Frontend" scheme="https://alpgo.cc/categories/Frontend/"/>
+    
+    
+      <category term="Chrome" scheme="https://alpgo.cc/tags/Chrome/"/>
+    
+      <category term="Browser" scheme="https://alpgo.cc/tags/Browser/"/>
+    
+      <category term="Frontend" scheme="https://alpgo.cc/tags/Frontend/"/>
+    
+      <category term="Vus.js" scheme="https://alpgo.cc/tags/Vus-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>两步验证（双重验证）的概念</title>
+    <link href="https://alpgo.cc/2018/09/05/What-Is-Two-Factor-Authentication/"/>
+    <id>https://alpgo.cc/2018/09/05/What-Is-Two-Factor-Authentication/</id>
+    <published>2018-09-05T00:21:16.000Z</published>
+    <updated>2018-09-05T00:50:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="什么是双重验证？"><a href="#什么是双重验证？" class="headerlink" title="什么是双重验证？"></a>什么是双重验证？</h1><p>让我们从基础开始 - 身份验证是证明您有权访问特定资源的方法。该资源可以是计算机，服务器，在线帐户，也可以是文件夹共享。</p><p>我们许多人每天使用的最常见的身份验证类型是——用户名和密码。</p><p>2FA所做的是为普通用户名和密码添加额外的身份验证层，这样会使得对该资源进行未经授权的访问更加困难。</p><h1 id="2FA概念"><a href="#2FA概念" class="headerlink" title="2FA概念"></a>2FA概念</h1><p>2FA的基本概念可以归入许多类别，例如：</p><ul><li>你知道的东西 - 例如用户名和密码。</li><li>你拥有的东西 - 比如带有app的手机或硬件通行证（比如银行卡）。</li><li>你做的事情 - 比如接受手机上的弹出消息。</li><li>你是什么 - 生物指标，如指纹识别器或视网膜扫描仪。</li></ul><p>因此，当涉及到您的用户名和密码时，您就会知道这两条信息（好吧，我希望您仍然这样做）。所以你的用户名和密码都属于你知道的东西。因此，这是一个单一的身份验证因素。</p><p>登录我的网上银行网站时，我输入了我的用户名和密码，然后它会询问我来自一个令人难忘的单词的特定字母。您可能认为这是2FA的示例，但事实并非如此。</p><p>你知道，我知道我的用户名和密码，而且我也知道我难忘的一句话。因此，虽然登录我的网上银行网站有多个步骤，但仍然只使用了一个身份验证因素 - 我知道。</p><p>但是，如果我的手机上有一个应用程序配置为生成一次性密码（OTP），这是一个每30秒左右更改一次的代码，我的网上银行网站要求提供该代码; 这将是2FA，因为我使用两个身份验证因素：</p><ul><li>我知道的东西 - 我的用户名和密码。</li><li>我有的东西 - 我的手机带有生成的OTP。</li></ul><p>或者，我的银行移动应用程序也可以使用2FA，但方式不同。我可以使用我的用户名和密码登录他们的应用程序; 然后，它可以使用我手机上的指纹识别器提示我输入指纹。再次，这将是2FA：</p><ul><li>我知道的东西 - 我的用户名和密码。</li><li>我是什么 - 我的指纹。</li></ul><h1 id="2FA的类型"><a href="#2FA的类型" class="headerlink" title="2FA的类型"></a>2FA的类型</h1><p>有很多种类型的2FA。最常见的2FA类型是Google身份验证器或Authy等应用，可配置为生成每30秒左右更改一次的OTP。但是，可以使用更多类型的2FA，例如：</p><ul><li>OTP硬件令牌 - 如YubiKey，RSA令牌或CryptoCard。</li><li>OTP代码 - 这些代码可以由您设备上的应用，短信或电话生成。</li><li>弹出窗口 - 某些网站（如Google）可以在您的设备上生成弹出窗口，在登录时会询问“这是你吗？”，并提供确认或拒绝选项。</li><li>生物指标 - 例如指纹读取器或视网膜扫描仪。</li></ul><h1 id="为什么2FA更安全？"><a href="#为什么2FA更安全？" class="headerlink" title="为什么2FA更安全？"></a>为什么2FA更安全？</h1><p>以这种方式考虑 - 如果您的用户名和密码被泄露（说实话，我们希望更频繁地发生），那么威胁行为者可以访问您的帐户，因为他们拥有需要进行身份验证的所有数据。</p><p>如果您在多个地方使用相同的密码，这会变得更糟，因为威胁行为者可以重新使用这些凭据登录您拥有的其他帐户。</p><p>但是，如果您在同一个网站上使用2FA，那么威胁行为者也需要您的第二个身份验证因素才能破坏您的凭据。在大多数情况下，这是您的手机。因此，除非你给Johnny Hacker你的手机，否则你仍然非常安全 - 尽管我建议你更改密码。</p><p>虽然2FA不是治疗各种凭证收获的神奇药丸，但它确实可以帮助您的在线帐户更加安全。</p><h1 id="2FA可以在哪里使用？"><a href="#2FA可以在哪里使用？" class="headerlink" title="2FA可以在哪里使用？"></a>2FA可以在哪里使用？</h1><p>总之，很多地方。许多网站和服务现在提供某种2FA选项。您可能不希望为每个帐户使用2FA，这很好，但我个人建议您在真正重要的帐户上有2FA，如电子邮件，PayPal，银行和密码管理器（如果有的话）。</p><p>就个人而言，我使用2FA，但我建议你这样做。</p><p>下面的链接是一个网站，它编制一个提供至少一种2FA方法的常见网站列表，以及一个允许您在该特定服务上启用它的页面链接。</p><p><a href="https://twofactorauth.org/" target="_blank" rel="noopener">https://twofactorauth.org/</a></p><h1 id="最后的想法"><a href="#最后的想法" class="headerlink" title="最后的想法"></a>最后的想法</h1><p>正如我上面所说，2FA肯定不是一个神奇的药丸，会让你不受攻击，但它肯定会让你的帐户更安全。你的安全姿势应该像洋葱一样 - 它应该有多层。威胁演员必须越过障碍越多，破坏帐户的难度就越大 - 事实上，你更安全。</p><p>是的，最初登录涉及更多麻烦，但就个人而言，我宁愿花费额外10秒登录2FA而不是让我的帐户安全性降低。</p><p>此外，许多密码管理器，如Bitwarden，都可以为您管理2FA代码，因此更容易！</p><p>现在您知道什么是双因素身份验证的答案？人们，出去保护你的帐户吧！</p><p>本文转载自: <a href="https://kevq.uk/what-is-two-factor-authentication/" target="_blank" rel="noopener">What Is Two Factor Authentication?</a>，首发于<a href="https://kevq.uk/" target="_blank" rel="noopener">Kev Quirk</a>。</p><p>The post <a href="https://kevq.uk/what-is-two-factor-authentication/" target="_blank" rel="noopener">What Is Two Factor Authentication?</a> appeared first on <a href="https://kevq.uk/" target="_blank" rel="noopener">Kev Quirk</a>.</p>]]></content>
+    
+    <summary type="html">
+    
+      什么是双重验证？双重身份验证（2FA），是为您的在线帐户添加额外的安全层时的最新热门词。但你有没有想过自己什么是双因素身份验证？在本文中，我打算回顾一下2FA是什么，它做了什么，以及为什么你应该使用它。
+    
+    </summary>
+    
+      <category term="Security" scheme="https://alpgo.cc/categories/Security/"/>
+    
+      <category term="Tech" scheme="https://alpgo.cc/categories/Security/Tech/"/>
+    
+    
+      <category term="2FA" scheme="https://alpgo.cc/tags/2FA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Nginx config proxy pass to cross domain</title>
+    <link href="https://alpgo.cc/2018/09/04/Nginx-config-proxy-pass-to-cross-domain/"/>
+    <id>https://alpgo.cc/2018/09/04/Nginx-config-proxy-pass-to-cross-domain/</id>
+    <published>2018-09-04T10:51:05.000Z</published>
+    <updated>2018-09-04T10:54:47.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>url: http://127.0.0.1/proxy/test.html</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">location /proxy/ &#123;</span><br><span class="line">    proxy_pass http://127.0.0.1/;</span><br><span class="line">&#125;</span><br><span class="line">proxy url: http://127.0.0.1/test.html</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">location /proxy/ &#123;</span><br><span class="line">    proxy_pass http://127.0.0.1;</span><br><span class="line">&#125;</span><br><span class="line">proxy url: http://127.0.0.1/proxy/test.html</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">location /proxy/ &#123;</span><br><span class="line">    proxy_pass http://127.0.0.1/aaa/;</span><br><span class="line">&#125;</span><br><span class="line">proxy url: http://127.0.0.1/aaa/test.html</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">location /proxy/ &#123;</span><br><span class="line">    proxy_pass http://127.0.0.1/aaa;</span><br><span class="line">&#125;</span><br><span class="line">proxy url: http://127.0.0.1/aaatest.html</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;code&gt;url: http://127.0.0.1/proxy/test.html&lt;/code&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;li
+      
+    
+    </summary>
+    
+      <category term="Server" scheme="https://alpgo.cc/categories/Server/"/>
+    
+    
+      <category term="Nginx" scheme="https://alpgo.cc/tags/Nginx/"/>
+    
+      <category term="Server" scheme="https://alpgo.cc/tags/Server/"/>
+    
+      <category term="Cross Domain" scheme="https://alpgo.cc/tags/Cross-Domain/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>What&#39;s the best free Todo list tool on Mac?</title>
+    <link href="https://alpgo.cc/2018/09/03/What-s-the-best-free-Todo-list-tool-on-Mac/"/>
+    <id>https://alpgo.cc/2018/09/03/What-s-the-best-free-Todo-list-tool-on-Mac/</id>
+    <published>2018-09-03T05:05:21.000Z</published>
+    <updated>2018-09-03T05:09:55.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Reminders app.</p><p>Use <code>Command</code> + <code>Space</code> to search Reminders.app, press <code>return</code> to open the app.</p><p>Have fun.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Reminders app.&lt;/p&gt;
+&lt;p&gt;Use &lt;code&gt;Command&lt;/code&gt; + &lt;code&gt;Space&lt;/code&gt; to search Reminders.app, press &lt;code&gt;return&lt;/code&gt; to open the app.&lt;/
+      
+    
+    </summary>
+    
+      <category term="Tools" scheme="https://alpgo.cc/categories/Tools/"/>
+    
+    
+      <category term="Mac OS X" scheme="https://alpgo.cc/tags/Mac-OS-X/"/>
+    
+      <category term="TODO List" scheme="https://alpgo.cc/tags/TODO-List/"/>
+    
+      <category term="Tools" scheme="https://alpgo.cc/tags/Tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Detect browser language in JavaScript</title>
+    <link href="https://alpgo.cc/2018/09/03/Detect-browser-language-in-JavaScript/"/>
+    <id>https://alpgo.cc/2018/09/03/Detect-browser-language-in-JavaScript/</id>
+    <published>2018-09-03T00:05:55.000Z</published>
+    <updated>2018-09-04T10:55:31.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>To detect a user’s preferred language, we may refer to several properties on navigator. Some are supported only in latest browsers, while some are proprietary and IE only.</p><h1 id="Take-a-deep-look-on-navigator"><a href="#Take-a-deep-look-on-navigator" class="headerlink" title="Take a deep look on navigator"></a>Take a deep look on navigator</h1><p>Currently we have the following properties available to us:</p><table><thead><tr><th>Property</th><th>Chrome</th><th>Firefox</th><th>IE</th><th>Edge</th><th>Opera</th><th>Safari</th></tr></thead><tbody><tr><td>navigator.languages</td><td>32</td><td>32</td><td>x</td><td>x</td><td>x</td><td>x</td></tr><tr><td>navigator.language</td><td>Yes</td><td>1</td><td>11</td><td>Yes</td><td>Yes</td><td>Yes</td></tr><tr><td>navigator.userLanguage</td><td>x</td><td>x</td><td>Yes</td><td>x</td><td>x</td><td>x</td></tr><tr><td>navigator.browserLanguage</td><td>x</td><td>x</td><td>Yes</td><td>x</td><td>x</td><td>x</td></tr><tr><td>navigator.systemLanguage</td><td>x</td><td>x</td><td>Yes</td><td>x</td><td>x</td><td>x</td></tr></tbody></table><p>The original article was published in <a href="https://zzz.buzz/2016/01/13/detect-browser-language-in-javascript/" target="_blank" rel="noopener">zzz.buzz</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;To detect a user’s preferred language, we may refer to several properties on navigator. Some are supported only in latest browsers, while
+      
+    
+    </summary>
+    
+      <category term="Frontend" scheme="https://alpgo.cc/categories/Frontend/"/>
+    
+      <category term="Browser" scheme="https://alpgo.cc/categories/Frontend/Browser/"/>
+    
+    
+      <category term="Browser" scheme="https://alpgo.cc/tags/Browser/"/>
+    
+      <category term="Language" scheme="https://alpgo.cc/tags/Language/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python study log #1 Scrapy</title>
+    <link href="https://alpgo.cc/2018/08/29/Python-study-log-1/"/>
+    <id>https://alpgo.cc/2018/08/29/Python-study-log-1/</id>
+    <published>2018-08-29T05:57:43.000Z</published>
+    <updated>2018-08-29T06:51:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Install-Scrapy"><a href="#Install-Scrapy" class="headerlink" title="Install Scrapy"></a>Install Scrapy</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install scrapy</span><br></pre></td></tr></table></figure><h1 id="Observe-target-website-structure"><a href="#Observe-target-website-structure" class="headerlink" title="Observe target website structure"></a>Observe target website structure</h1><h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p>This time I want to download the weibo page’s pictures.</p><p>Get the structure:</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span>...<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card-wrap"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card-main"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">header</span> <span class="attr">class</span>=<span class="string">"weibo-top m-box m-avatar-box"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"m-img-box"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://tvax2.sinaimg.cn/crop.0.0.1125.1125.180/9f599f58ly8fpxm8fy94qj20v90v9774.jpg"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"m-box-col m-box-dir m-box-center"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"m-text-box"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">h3</span> <span class="attr">class</span>=<span class="string">"m-text-cut"</span>&gt;</span></span><br><span class="line">                &#123;&#123; weiboAuthorName &#125;&#125;</span><br><span class="line">                <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"m-icon m-icon-vipl2"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">            ...</span><br><span class="line">            <span class="comment">&lt;!-- img content, our target --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"weibo-media-wraps weibo-media media-b"</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"m-auto-list"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"m-auto-box"</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"m-img-box m-imghold-square"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://wx4.sinaimg.cn/orj360/9f599f58ly1fuqfsg6pckj202e029t8q.jpg"</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"m-auto-box"</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"m-img-box m-imghold-square"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://wx3.sinaimg.cn/orj360/9f599f58ly1fuqfsptm6zj20c309dmy1.jpg"</span>&gt;</span></span><br><span class="line">                  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                ...</span><br><span class="line">              ...</span><br><span class="line">            ...</span><br><span class="line">          ...</span><br><span class="line">        ...</span><br><span class="line">      ...</span><br><span class="line">    ...</span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><p>We can see the structure, then we know the pictrues’s class structure is like:</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"m-auto-box"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"m-img-box m-imghold-square"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://wx3.sinaimg.cn/orj360/9f599f58ly1fuqfsptm6zj20c309dmy1.jpg"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br></pre></td></tr></table></figure><p>So, we can due to the ‘m-imghold-square’ class to get the img tag’s position.</p><p>Then get the img src and save it on our disk or database.</p><h1 id="Coding"><a href="#Coding" class="headerlink" title="Coding"></a>Coding</h1><h2 id="Init-project"><a href="#Init-project" class="headerlink" title="Init project"></a>Init project</h2><p>Init a scrapy project, we named it ‘tutorial’</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy startproject tutorial</span><br></pre></td></tr></table></figure><p>The project structure like:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">tutorial/</span><br><span class="line">    scrapy.cfg</span><br><span class="line">    tutorial/</span><br><span class="line">        __init__.py</span><br><span class="line">        items.py</span><br><span class="line">        pipelines.py</span><br><span class="line">        settings.py</span><br><span class="line">        spiders/</span><br><span class="line">            __init__.py</span><br><span class="line">            ...</span><br></pre></td></tr></table></figure><p>They means:</p><ul><li>scrapy.cfg: project config</li><li>tutorial/: python module</li><li>tutorial/items.py: item file</li><li>tutorial/pipelines.py: pipelines file</li><li>tutorial/settings.py: settings file</li><li>tutorial/spiders/: spider folder</li></ul><h2 id="Define-Item"><a href="#Define-Item" class="headerlink" title="Define Item"></a>Define Item</h2><p>Item is your data container.</p><h3 id="Create-scrapy-Item"><a href="#Create-scrapy-Item" class="headerlink" title="Create scrapy.Item"></a>Create scrapy.Item</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import scrapy</span><br><span class="line"></span><br><span class="line">class WeiboItem(scrapy.Item):</span><br><span class="line">    title = scrapy.Field()</span><br><span class="line">    content = scrapy.Field()</span><br><span class="line">    pictures = scrapy.Field()</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Install-Scrapy&quot;&gt;&lt;a href=&quot;#Install-Scrapy&quot; class=&quot;headerlink&quot; title=&quot;Install Scrapy&quot;&gt;&lt;/a&gt;Install Scrapy&lt;/h1&gt;&lt;figure class=&quot;highlight 
+      
+    
+    </summary>
+    
+      <category term="Backend" scheme="https://alpgo.cc/categories/Backend/"/>
+    
+      <category term="Python" scheme="https://alpgo.cc/categories/Backend/Python/"/>
+    
+    
+      <category term="Python" scheme="https://alpgo.cc/tags/Python/"/>
+    
+      <category term="Scrapy" scheme="https://alpgo.cc/tags/Scrapy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>About html button focus and hover style</title>
+    <link href="https://alpgo.cc/2018/08/28/About-html-button-focus-and-hover-style/"/>
+    <id>https://alpgo.cc/2018/08/28/About-html-button-focus-and-hover-style/</id>
+    <published>2018-08-28T00:11:36.000Z</published>
+    <updated>2018-08-28T00:24:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>As we know, the HTML button or other tags has focus and hover attributes.</p><p>There are some issue, if we click the button, it is on hover or focus?</p><p>The answer is focus, and the button will be highlight.</p><p>We move out the mouse cannot remove the highlight style, because it is not hover state, it is focus state.</p><p>So if we want to move out the mouse and remove the highlight style at the same time, we can use follows js code:</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'click'</span>, (e) =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">document</span>.activeElement.toString() === <span class="string">'[object HTMLButtonElement]'</span>) &#123;</span><br><span class="line">    <span class="built_in">document</span>.activeElement.blur()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><p>Those code can blur the focus state on you clicked button, the focus highlight style will remove at the same time.</p><p>But it is add event listener function, so please make sure you only run those code once before your remove this listener.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;As we know, the HTML button or other tags has focus and hover attributes.&lt;/p&gt;
+&lt;p&gt;There are some issue, if we click the button, it is on h
+      
+    
+    </summary>
+    
+      <category term="Frontend" scheme="https://alpgo.cc/categories/Frontend/"/>
+    
+      <category term="JavaScript" scheme="https://alpgo.cc/categories/Frontend/JavaScript/"/>
+    
+      <category term="HTML" scheme="https://alpgo.cc/categories/Frontend/HTML/"/>
+    
+      <category term="CSS" scheme="https://alpgo.cc/categories/Frontend/CSS/"/>
+    
+    
+      <category term="CSS" scheme="https://alpgo.cc/tags/CSS/"/>
+    
+      <category term="HTML" scheme="https://alpgo.cc/tags/HTML/"/>
+    
+      <category term="JavaScript" scheme="https://alpgo.cc/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>About ES6 async and await key word</title>
+    <link href="https://alpgo.cc/2018/08/27/About-ES6-async-and-await-key-word/"/>
+    <id>https://alpgo.cc/2018/08/27/About-ES6-async-and-await-key-word/</id>
+    <published>2018-08-27T09:32:18.000Z</published>
+    <updated>2018-09-03T00:20:31.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>The original article was published in <a href="https://segmentfault.com/a/1190000007535316" target="_blank" rel="noopener">边城客栈</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;The original article was published in &lt;a href=&quot;https://segmentfault.com/a/1190000007535316&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;边城客栈&lt;/a&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="Frontend" scheme="https://alpgo.cc/categories/Frontend/"/>
+    
+      <category term="JavaScript" scheme="https://alpgo.cc/categories/Frontend/JavaScript/"/>
+    
+      <category term="ES6" scheme="https://alpgo.cc/categories/Frontend/JavaScript/ES6/"/>
+    
+    
+      <category term="ES6" scheme="https://alpgo.cc/tags/ES6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue.js ElementUI i18n settings</title>
+    <link href="https://alpgo.cc/2018/08/27/Vue-js-i18n-settings/"/>
+    <id>https://alpgo.cc/2018/08/27/Vue-js-i18n-settings/</id>
+    <published>2018-08-27T07:18:11.000Z</published>
+    <updated>2018-08-27T08:19:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h1><h2 id="Settings"><a href="#Settings" class="headerlink" title="Settings"></a>Settings</h2><figure class="highlight js"><figcaption><span>zh.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line"> name: <span class="string">'用户名'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight js"><figcaption><span>en.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line"> name: <span class="string">'User Name'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight js"><figcaption><span>main.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// import element ui language package</span></span><br><span class="line"><span class="keyword">import</span> enLocale <span class="keyword">from</span> <span class="string">'element-ui/lib/locale/lang/en'</span></span><br><span class="line"><span class="keyword">import</span> zhLocale <span class="keyword">from</span> <span class="string">'element-ui/lib/locale/lang/zh-CN'</span></span><br><span class="line"><span class="keyword">import</span> VueI18n <span class="keyword">from</span> <span class="string">'vue-i18n'</span></span><br><span class="line">Vue.use(VueI18n)</span><br><span class="line"></span><br><span class="line"><span class="comment">// set language messages</span></span><br><span class="line"><span class="keyword">const</span> messages = &#123;</span><br><span class="line">  <span class="string">'zh'</span>: <span class="built_in">Object</span>.assign(<span class="built_in">require</span>(<span class="string">'./i18n/zh'</span>), zhLocale),</span><br><span class="line">  <span class="string">'en'</span>: <span class="built_in">Object</span>.assign(<span class="built_in">require</span>(<span class="string">'./i18n/en'</span>), enLocale)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// set date format</span></span><br><span class="line"><span class="keyword">const</span> dateTimeFormats = &#123;</span><br><span class="line">  <span class="string">'zh'</span>: &#123;</span><br><span class="line">    short: &#123;</span><br><span class="line">      year: <span class="string">'numeric'</span>, <span class="attr">month</span>: <span class="string">'short'</span>, <span class="attr">day</span>: <span class="string">'numeric'</span>, <span class="attr">hour12</span>: <span class="literal">false</span></span><br><span class="line">    &#125;,</span><br><span class="line">    long: &#123;</span><br><span class="line">      year: <span class="string">'numeric'</span>, <span class="attr">month</span>: <span class="string">'short'</span>, <span class="attr">day</span>: <span class="string">'numeric'</span>, <span class="attr">hour</span>: <span class="string">'numeric'</span>, <span class="attr">minute</span>: <span class="string">'numeric'</span>, <span class="attr">hour12</span>: <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">'en'</span>: &#123;</span><br><span class="line">    short: &#123;</span><br><span class="line">      year: <span class="string">'numeric'</span>, <span class="attr">month</span>: <span class="string">'short'</span>, <span class="attr">day</span>: <span class="string">'numeric'</span>, <span class="attr">hour12</span>: <span class="literal">false</span></span><br><span class="line">    &#125;,</span><br><span class="line">    long: &#123;</span><br><span class="line">      year: <span class="string">'numeric'</span>, <span class="attr">month</span>: <span class="string">'short'</span>, <span class="attr">day</span>: <span class="string">'numeric'</span>, <span class="attr">hour</span>: <span class="string">'numeric'</span>, <span class="attr">minute</span>: <span class="string">'numeric'</span>, <span class="attr">hour12</span>: <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> i18n = <span class="keyword">new</span> VueI18n(&#123;</span><br><span class="line">  locale: Vue.config.lang,</span><br><span class="line">  fallbackLocale: <span class="string">'en'</span>,</span><br><span class="line">  messages,</span><br><span class="line">  dateTimeFormats</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><h2 id="Useage"><a href="#Useage" class="headerlink" title="Useage"></a>Useage</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123; $t('name') &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123; $d(new Date(), 'short') &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Usage&quot;&gt;&lt;a href=&quot;#Usage&quot; class=&quot;headerlink&quot; title=&quot;Usage&quot;&gt;&lt;/a&gt;Usage&lt;/h1&gt;&lt;h2 id=&quot;Settings&quot;&gt;&lt;a href=&quot;#Settings&quot; class=&quot;headerlink&quot; titl
+      
+    
+    </summary>
+    
+      <category term="Frontend" scheme="https://alpgo.cc/categories/Frontend/"/>
+    
+      <category term="Vue.js" scheme="https://alpgo.cc/categories/Frontend/Vue-js/"/>
+    
+      <category term="ElementUI" scheme="https://alpgo.cc/categories/Frontend/Vue-js/ElementUI/"/>
+    
+    
+      <category term="ElementUI" scheme="https://alpgo.cc/tags/ElementUI/"/>
+    
+      <category term="Vue.js" scheme="https://alpgo.cc/tags/Vue-js/"/>
+    
+      <category term="i18n" scheme="https://alpgo.cc/tags/i18n/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Use hexo and github to build blog site</title>
     <link href="https://alpgo.cc/2018/08/24/Use-hexo-and-github-to-build-blog/"/>
     <id>https://alpgo.cc/2018/08/24/Use-hexo-and-github-to-build-blog/</id>
     <published>2018-08-24T07:37:53.000Z</published>
-    <updated>2018-08-24T09:04:00.000Z</updated>
+    <updated>2018-08-27T08:19:10.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="What-we-need"><a href="#What-we-need" class="headerlink" title="What we need"></a>What we need</h2><ul><li>Github account</li><li>Node.js</li><li>Hexo</li><li>Domain (If you have not a domain, you can just use the xxx.github.io)</li><li>…</li></ul><h2 id="Create-your-git-repository"><a href="#Create-your-git-repository" class="headerlink" title="Create your git repository"></a>Create your git repository</h2><p>Go to github, and create a repository named xxx.github.io (‘xxx’ means your username).</p><p><img src="http://images.alpgo.cc/images/create_github_io_repository.png" alt=""></p><h2 id="Next"><a href="#Next" class="headerlink" title="Next"></a>Next</h2><h4 id="TBD"><a href="#TBD" class="headerlink" title="TBD"></a>TBD</h4>]]></content>
+    <content type="html"><![CDATA[<h2 id="What-we-need"><a href="#What-we-need" class="headerlink" title="What we need"></a>What we need</h2><ul><li>Github account</li><li>Node.js</li><li>Hexo</li><li>Domain (If you have not a domain, you can just use the xxx.github.io)</li><li>…</li></ul><h2 id="Create-your-git-repository"><a href="#Create-your-git-repository" class="headerlink" title="Create your git repository"></a>Create your git repository</h2><p>Go to github, and create a repository named xxx.github.io (‘xxx’ means your username).</p><h2 id="Clone-project-to-your-disk"><a href="#Clone-project-to-your-disk" class="headerlink" title="Clone project to your disk"></a>Clone project to your disk</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:xxx/xxx.github.io</span><br></pre></td></tr></table></figure><h2 id="Install-Node-js"><a href="#Install-Node-js" class="headerlink" title="Install Node.js"></a>Install Node.js</h2><p>Look <a href="https://nodejs.org/" target="_blank" rel="noopener">nodejs.org</a></p><h2 id="Install-hexo"><a href="#Install-hexo" class="headerlink" title="Install hexo"></a>Install hexo</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo</span><br></pre></td></tr></table></figure><h2 id="TBD"><a href="#TBD" class="headerlink" title="TBD"></a>TBD</h2>]]></content>
     
     <summary type="html">
     
@@ -35,6 +307,10 @@
       
     
     </summary>
+    
+      <category term="Frontend" scheme="https://alpgo.cc/categories/Frontend/"/>
+    
+      <category term="Hexo" scheme="https://alpgo.cc/categories/Frontend/Hexo/"/>
     
     
       <category term="Github" scheme="https://alpgo.cc/tags/Github/"/>
@@ -50,7 +326,7 @@
     <link href="https://alpgo.cc/2018/08/23/About-chrome-default-minimum-font-size/"/>
     <id>https://alpgo.cc/2018/08/23/About-chrome-default-minimum-font-size/</id>
     <published>2018-08-23T10:26:15.000Z</published>
-    <updated>2018-08-24T08:16:45.000Z</updated>
+    <updated>2018-08-28T00:13:11.000Z</updated>
     
     <content type="html"><![CDATA[<p>In chrome settings, there are a default minimum font size setting.</p><p>On Windows and Mac OS X, there are maybe 12px.</p><p>So, when your page’s css font size value &lt; 12px, there will display 12px.</p><p>To change the minimum font size in Chrome go to: </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">settings &gt; advanced settings &gt; web content &gt; font size &gt; customise fonts</span><br><span class="line"></span><br><span class="line">&gt; scroll down to the bottom and you will see the &apos;minimum font size&apos; slider.</span><br></pre></td></tr></table></figure><h4 id="以上。"><a href="#以上。" class="headerlink" title="以上。"></a>以上。</h4>]]></content>
     
@@ -67,12 +343,16 @@
     
       <category term="Frontend" scheme="https://alpgo.cc/categories/Frontend/"/>
     
+      <category term="Browser" scheme="https://alpgo.cc/categories/Frontend/Browser/"/>
+    
+      <category term="Chrome" scheme="https://alpgo.cc/categories/Frontend/Browser/Chrome/"/>
+    
     
       <category term="Chrome" scheme="https://alpgo.cc/tags/Chrome/"/>
     
       <category term="font-size" scheme="https://alpgo.cc/tags/font-size/"/>
     
-      <category term="css" scheme="https://alpgo.cc/tags/css/"/>
+      <category term="CSS" scheme="https://alpgo.cc/tags/CSS/"/>
     
   </entry>
   
@@ -81,7 +361,7 @@
     <link href="https://alpgo.cc/2018/08/23/Github-commit-message-fix-issue-isuee/"/>
     <id>https://alpgo.cc/2018/08/23/Github-commit-message-fix-issue-isuee/</id>
     <published>2018-08-23T06:14:01.000Z</published>
-    <updated>2018-08-24T08:16:20.000Z</updated>
+    <updated>2018-08-27T08:19:10.000Z</updated>
     
     <content type="html"><![CDATA[<p>About the git message, following keywords, followed by an issue number, will close the issue:</p><ul><li>close</li><li>closes</li><li>closed</li><li>fix</li><li>fixes</li><li>fixed</li><li>resolve</li><li>resolves</li><li>resolved</li></ul><p>If you do not want to close the issue, please mind the commit message.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fix(fronted): fix issue #123</span><br></pre></td></tr></table></figure><p>(If you close the issue without QA check…)</p><h4 id="以上。"><a href="#以上。" class="headerlink" title="以上。"></a>以上。</h4>]]></content>
     
@@ -98,7 +378,9 @@
     
     </summary>
     
-      <category term="Project" scheme="https://alpgo.cc/categories/Project/"/>
+      <category term="Project Management" scheme="https://alpgo.cc/categories/Project-Management/"/>
+    
+      <category term="Git" scheme="https://alpgo.cc/categories/Project-Management/Git/"/>
     
     
       <category term="Github" scheme="https://alpgo.cc/tags/Github/"/>
@@ -114,7 +396,7 @@
     <link href="https://alpgo.cc/2018/08/22/About-how-to-fix-element-ui-form-item-component-validator-message-i18n-issue/"/>
     <id>https://alpgo.cc/2018/08/22/About-how-to-fix-element-ui-form-item-component-validator-message-i18n-issue/</id>
     <published>2018-08-22T04:22:33.000Z</published>
-    <updated>2018-08-24T08:16:40.000Z</updated>
+    <updated>2018-08-27T08:19:10.000Z</updated>
     
     <content type="html"><![CDATA[<p>Overwrite the form-item component and add  <code>$t()</code> on template.</p><p>The component file path is</p><p><code>PROJECT_PATH/node_modules/element-ui/packages/form/src/form-item.vue</code></p><p>Copy that and overwrite it on your project, then change the code,</p><p>In line 26, use the <code>$t</code> to do the i18n.</p><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class="el-form-item" :class="[&#123;</span><br><span class="line">      'el-form-item--feedback': elForm &amp;&amp; elForm.statusIcon,</span><br><span class="line">      'is-error': validateState <span class="comment">=== 'error',</span></span><br><span class="line">      'is-validating': validateState <span class="comment">=== 'validating',</span></span><br><span class="line">      'is-success': validateState <span class="comment">=== 'success',</span></span><br><span class="line">      'is-required': isRequired || required</span><br><span class="line">    &#125;,</span><br><span class="line">    sizeClass ? 'el-form-item--' + sizeClass : ''</span><br><span class="line">  ]"&gt;</span><br><span class="line">    &lt;label :for="labelFor" class="el-form-item__label" v-bind:style="labelStyle" v-if="label || $slots.label"&gt;</span><br><span class="line">      &lt;slot name="label"&gt;&#123;&#123;label + form.labelSuffix&#125;&#125;&lt;/slot&gt;</span><br><span class="line">    &lt;/label&gt;</span><br><span class="line">    &lt;div class="el-form-item__content" v-bind:style="contentStyle"&gt;</span><br><span class="line">      &lt;slot&gt;&lt;/slot&gt;</span><br><span class="line">      &lt;transition name="el-zoom-in-top"&gt;</span><br><span class="line">        &lt;div</span><br><span class="line">          v-if="validateState <span class="comment">=== 'error' &amp;&amp; showMessage &amp;&amp; form.showMessage"</span></span><br><span class="line">          class="el-form-item__error"</span><br><span class="line">          :class="&#123;</span><br><span class="line">            'el-form-item__error--inline': typeof inlineMessage <span class="comment">=== 'boolean'</span></span><br><span class="line">              ? inlineMessage</span><br><span class="line">              : (elForm &amp;&amp; elForm.inlineMessage || false)</span><br><span class="line">          &#125;"</span><br><span class="line">        &gt;</span><br><span class="line"><span class="deletion">-          &#123;&#123; validateMessage &#125;&#125;</span></span><br><span class="line"><span class="addition">+          &#123;&#123; $t(validateMessage) &#125;&#125;</span></span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &lt;/transition&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure><p>By the way, if you change the code like this, you need send the i18n key as message value.</p><p>Like this,</p><figure class="highlight js"><figcaption><span>index.vue</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rules: &#123;</span><br><span class="line">  name: [</span><br><span class="line">    &#123; <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">message</span>: <span class="string">'nameRequired'</span>, <span class="attr">trigger</span>: <span class="string">'blur'</span> &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight js"><figcaption><span>en.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  nameRequired: <span class="string">'Please input the name'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight js"><figcaption><span>zh.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  nameRequired: <span class="string">'请输入姓名'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="以上。"><a href="#以上。" class="headerlink" title="以上。"></a>以上。</h4>]]></content>
     
@@ -130,6 +412,10 @@
     </summary>
     
       <category term="Frontend" scheme="https://alpgo.cc/categories/Frontend/"/>
+    
+      <category term="Vue.js" scheme="https://alpgo.cc/categories/Frontend/Vue-js/"/>
+    
+      <category term="ElementUI" scheme="https://alpgo.cc/categories/Frontend/Vue-js/ElementUI/"/>
     
     
       <category term="ElementUI" scheme="https://alpgo.cc/tags/ElementUI/"/>
@@ -154,58 +440,6 @@
       
       
         &lt;p&gt;本页面为评论测试用页面，以上。&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-      <category term="Testing" scheme="https://alpgo.cc/categories/Testing/"/>
-    
-    
-      <category term="Testing" scheme="https://alpgo.cc/tags/Testing/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Asahi Second Post</title>
-    <link href="https://alpgo.cc/2018/08/21/Asahi-Second-Post/"/>
-    <id>https://alpgo.cc/2018/08/21/Asahi-Second-Post/</id>
-    <published>2018-08-21T03:03:35.000Z</published>
-    <updated>2018-08-21T07:01:39.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>これは日本語のテストポストてす、以上。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;これは日本語のテストポストてす、以上。&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-      <category term="Testing" scheme="https://alpgo.cc/categories/Testing/"/>
-    
-    
-      <category term="Testing" scheme="https://alpgo.cc/tags/Testing/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Asahi First Post</title>
-    <link href="https://alpgo.cc/2018/08/21/Asahi-First-Post/"/>
-    <id>https://alpgo.cc/2018/08/21/Asahi-First-Post/</id>
-    <published>2018-08-21T01:22:18.000Z</published>
-    <updated>2018-08-21T07:01:39.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>This is the first post</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;This is the first post&lt;/p&gt;
 
       
     

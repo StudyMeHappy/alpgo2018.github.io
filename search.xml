@@ -1,9 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[前端开发中的一些注意点]]></title>
+    <url>%2F2018%2F09%2F07%2FSome-frontend-tips%2F</url>
+    <content type="text"><![CDATA[前端开发中的一些注意点框架选择选择框架时应该考虑的问题 浏览器兼容问题，比如Vue.js是不能适配IE8及iE8以下版本的，如果要考虑IE8的兼容性，应该考虑更换其他框架 测试框架 单元测试 代码在一开始编写的时候是很简单的，但是随着开发进程会变得越来越复杂 正在研究如何使用Mocha JS部分 命名规范，驼峰命名 分工时同样的变量在不同页面的命名可能会不一样，这个不好，如开始时间的变量命名为startTime，另一个页面肯能是start、startDate，这种情况可能会造成后期维护上的多余负担，建议定期对变量名的命名进行一次check 提高代码复用性，不要写功能相似的多余代码，比如使用vue-i18n时有自带的日期国际化函数，可以直接调用，有的页面写的时候不清楚这一点，重写写了类似功能的代码，结果最后又改成一样的，费力又不讨好，这种情况应该避免 个人觉得结对编程对提高代码质量和减少低级错误的发生率有很大好处 UI部分 css的公用问题，关于这一点由于前端会使用UI框架，所以主要通过重写UI框架的内部样式来实现，具体是每个页面单独重写还是整体重写需要根据情况考虑，但是如果在代码写完之后再来做这个工作的话，会很难受，往往就会妥协、搁置下来 关于scss，最好单独写一个scss文件，不同层级设置不同的公用scss文件，单个页面也配置单独的scss文件，这样可以比较好的解决scss的复用问题 浏览器部分 最近写css的时候发现一个问题，Chrome有一个默认的最小显示字体的设置，在Windows与MacOSX中，大概是12px。这意味着如果css设置字体大小font-size小于12px，在Chrome浏览器上显示的仍然是12px]]></content>
+      <categories>
+        <category>Frontend</category>
+      </categories>
+      <tags>
+        <tag>Chrome</tag>
+        <tag>Browser</tag>
+        <tag>Frontend</tag>
+        <tag>Vus.js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[两步验证（双重验证）的概念]]></title>
+    <url>%2F2018%2F09%2F05%2FWhat-Is-Two-Factor-Authentication%2F</url>
+    <content type="text"><![CDATA[什么是双重验证？让我们从基础开始 - 身份验证是证明您有权访问特定资源的方法。该资源可以是计算机，服务器，在线帐户，也可以是文件夹共享。 我们许多人每天使用的最常见的身份验证类型是——用户名和密码。 2FA所做的是为普通用户名和密码添加额外的身份验证层，这样会使得对该资源进行未经授权的访问更加困难。 2FA概念2FA的基本概念可以归入许多类别，例如： 你知道的东西 - 例如用户名和密码。 你拥有的东西 - 比如带有app的手机或硬件通行证（比如银行卡）。 你做的事情 - 比如接受手机上的弹出消息。 你是什么 - 生物指标，如指纹识别器或视网膜扫描仪。 因此，当涉及到您的用户名和密码时，您就会知道这两条信息（好吧，我希望您仍然这样做）。所以你的用户名和密码都属于你知道的东西。因此，这是一个单一的身份验证因素。 登录我的网上银行网站时，我输入了我的用户名和密码，然后它会询问我来自一个令人难忘的单词的特定字母。您可能认为这是2FA的示例，但事实并非如此。 你知道，我知道我的用户名和密码，而且我也知道我难忘的一句话。因此，虽然登录我的网上银行网站有多个步骤，但仍然只使用了一个身份验证因素 - 我知道。 但是，如果我的手机上有一个应用程序配置为生成一次性密码（OTP），这是一个每30秒左右更改一次的代码，我的网上银行网站要求提供该代码; 这将是2FA，因为我使用两个身份验证因素： 我知道的东西 - 我的用户名和密码。 我有的东西 - 我的手机带有生成的OTP。 或者，我的银行移动应用程序也可以使用2FA，但方式不同。我可以使用我的用户名和密码登录他们的应用程序; 然后，它可以使用我手机上的指纹识别器提示我输入指纹。再次，这将是2FA： 我知道的东西 - 我的用户名和密码。 我是什么 - 我的指纹。 2FA的类型有很多种类型的2FA。最常见的2FA类型是Google身份验证器或Authy等应用，可配置为生成每30秒左右更改一次的OTP。但是，可以使用更多类型的2FA，例如： OTP硬件令牌 - 如YubiKey，RSA令牌或CryptoCard。 OTP代码 - 这些代码可以由您设备上的应用，短信或电话生成。 弹出窗口 - 某些网站（如Google）可以在您的设备上生成弹出窗口，在登录时会询问“这是你吗？”，并提供确认或拒绝选项。 生物指标 - 例如指纹读取器或视网膜扫描仪。 为什么2FA更安全？以这种方式考虑 - 如果您的用户名和密码被泄露（说实话，我们希望更频繁地发生），那么威胁行为者可以访问您的帐户，因为他们拥有需要进行身份验证的所有数据。 如果您在多个地方使用相同的密码，这会变得更糟，因为威胁行为者可以重新使用这些凭据登录您拥有的其他帐户。 但是，如果您在同一个网站上使用2FA，那么威胁行为者也需要您的第二个身份验证因素才能破坏您的凭据。在大多数情况下，这是您的手机。因此，除非你给Johnny Hacker你的手机，否则你仍然非常安全 - 尽管我建议你更改密码。 虽然2FA不是治疗各种凭证收获的神奇药丸，但它确实可以帮助您的在线帐户更加安全。 2FA可以在哪里使用？总之，很多地方。许多网站和服务现在提供某种2FA选项。您可能不希望为每个帐户使用2FA，这很好，但我个人建议您在真正重要的帐户上有2FA，如电子邮件，PayPal，银行和密码管理器（如果有的话）。 就个人而言，我使用2FA，但我建议你这样做。 下面的链接是一个网站，它编制一个提供至少一种2FA方法的常见网站列表，以及一个允许您在该特定服务上启用它的页面链接。 https://twofactorauth.org/ 最后的想法正如我上面所说，2FA肯定不是一个神奇的药丸，会让你不受攻击，但它肯定会让你的帐户更安全。你的安全姿势应该像洋葱一样 - 它应该有多层。威胁演员必须越过障碍越多，破坏帐户的难度就越大 - 事实上，你更安全。 是的，最初登录涉及更多麻烦，但就个人而言，我宁愿花费额外10秒登录2FA而不是让我的帐户安全性降低。 此外，许多密码管理器，如Bitwarden，都可以为您管理2FA代码，因此更容易！ 现在您知道什么是双因素身份验证的答案？人们，出去保护你的帐户吧！ 本文转载自: What Is Two Factor Authentication?，首发于Kev Quirk。 The post What Is Two Factor Authentication? appeared first on Kev Quirk.]]></content>
+      <categories>
+        <category>Security</category>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>2FA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Nginx config proxy pass to cross domain]]></title>
+    <url>%2F2018%2F09%2F04%2FNginx-config-proxy-pass-to-cross-domain%2F</url>
+    <content type="text"><![CDATA[url: http://127.0.0.1/proxy/test.html 1234location /proxy/ &#123; proxy_pass http://127.0.0.1/;&#125;proxy url: http://127.0.0.1/test.html 1234location /proxy/ &#123; proxy_pass http://127.0.0.1;&#125;proxy url: http://127.0.0.1/proxy/test.html 1234location /proxy/ &#123; proxy_pass http://127.0.0.1/aaa/;&#125;proxy url: http://127.0.0.1/aaa/test.html 1234location /proxy/ &#123; proxy_pass http://127.0.0.1/aaa;&#125;proxy url: http://127.0.0.1/aaatest.html]]></content>
+      <categories>
+        <category>Server</category>
+      </categories>
+      <tags>
+        <tag>Nginx</tag>
+        <tag>Server</tag>
+        <tag>Cross Domain</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[What's the best free Todo list tool on Mac?]]></title>
+    <url>%2F2018%2F09%2F03%2FWhat-s-the-best-free-Todo-list-tool-on-Mac%2F</url>
+    <content type="text"><![CDATA[Reminders app. Use Command + Space to search Reminders.app, press return to open the app. Have fun.]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>Mac OS X</tag>
+        <tag>TODO List</tag>
+        <tag>Tools</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Detect browser language in JavaScript]]></title>
+    <url>%2F2018%2F09%2F03%2FDetect-browser-language-in-JavaScript%2F</url>
+    <content type="text"><![CDATA[To detect a user’s preferred language, we may refer to several properties on navigator. Some are supported only in latest browsers, while some are proprietary and IE only. Take a deep look on navigatorCurrently we have the following properties available to us: Property Chrome Firefox IE Edge Opera Safari navigator.languages 32 32 x x x x navigator.language Yes 1 11 Yes Yes Yes navigator.userLanguage x x Yes x x x navigator.browserLanguage x x Yes x x x navigator.systemLanguage x x Yes x x x The original article was published in zzz.buzz]]></content>
+      <categories>
+        <category>Frontend</category>
+        <category>Browser</category>
+      </categories>
+      <tags>
+        <tag>Browser</tag>
+        <tag>Language</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Python study log #1 Scrapy]]></title>
+    <url>%2F2018%2F08%2F29%2FPython-study-log-1%2F</url>
+    <content type="text"><![CDATA[Install Scrapy1pip install scrapy Observe target website structureExampleThis time I want to download the weibo page’s pictures. Get the structure: 1234567891011121314151617181920212223242526272829303132333435363738394041&lt;html&gt; &lt;head&gt;...&lt;/head&gt; &lt;body&gt; ... &lt;div class="card-wrap"&gt; &lt;div class="card-main"&gt; &lt;header class="weibo-top m-box m-avatar-box"&gt; &lt;a class="m-img-box"&gt; &lt;img src="https://tvax2.sinaimg.cn/crop.0.0.1125.1125.180/9f599f58ly8fpxm8fy94qj20v90v9774.jpg"&gt; &lt;/a&gt; &lt;div class="m-box-col m-box-dir m-box-center"&gt; &lt;div class="m-text-box"&gt; &lt;a&gt; &lt;h3 class="m-text-cut"&gt; &#123;&#123; weiboAuthorName &#125;&#125; &lt;i class="m-icon m-icon-vipl2"&gt;&lt;/i&gt; &lt;/h3&gt; &lt;/a&gt; ... &lt;!-- img content, our target --&gt; &lt;div class="weibo-media-wraps weibo-media media-b"&gt; &lt;ul class="m-auto-list"&gt; &lt;li class="m-auto-box"&gt; &lt;div class="m-img-box m-imghold-square"&gt; &lt;img src="https://wx4.sinaimg.cn/orj360/9f599f58ly1fuqfsg6pckj202e029t8q.jpg"&gt; &lt;/div&gt; &lt;/li&gt; &lt;li class="m-auto-box"&gt; &lt;div class="m-img-box m-imghold-square"&gt; &lt;img src="https://wx3.sinaimg.cn/orj360/9f599f58ly1fuqfsptm6zj20c309dmy1.jpg"&gt; &lt;/div&gt; &lt;/li&gt; ... ... ... ... ... ... ... &lt;/body&gt;&lt;/html&gt; AnalysisWe can see the structure, then we know the pictrues’s class structure is like: 12345&lt;li class="m-auto-box"&gt; &lt;div class="m-img-box m-imghold-square"&gt; &lt;img src="https://wx3.sinaimg.cn/orj360/9f599f58ly1fuqfsptm6zj20c309dmy1.jpg"&gt; &lt;/div&gt;&lt;/li&gt; So, we can due to the ‘m-imghold-square’ class to get the img tag’s position. Then get the img src and save it on our disk or database. CodingInit projectInit a scrapy project, we named it ‘tutorial’ 1scrapy startproject tutorial The project structure like: 12345678910tutorial/ scrapy.cfg tutorial/ __init__.py items.py pipelines.py settings.py spiders/ __init__.py ... They means: scrapy.cfg: project config tutorial/: python module tutorial/items.py: item file tutorial/pipelines.py: pipelines file tutorial/settings.py: settings file tutorial/spiders/: spider folder Define ItemItem is your data container. Create scrapy.Item123456import scrapyclass WeiboItem(scrapy.Item): title = scrapy.Field() content = scrapy.Field() pictures = scrapy.Field()]]></content>
+      <categories>
+        <category>Backend</category>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>Scrapy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[About html button focus and hover style]]></title>
+    <url>%2F2018%2F08%2F28%2FAbout-html-button-focus-and-hover-style%2F</url>
+    <content type="text"><![CDATA[As we know, the HTML button or other tags has focus and hover attributes. There are some issue, if we click the button, it is on hover or focus? The answer is focus, and the button will be highlight. We move out the mouse cannot remove the highlight style, because it is not hover state, it is focus state. So if we want to move out the mouse and remove the highlight style at the same time, we can use follows js code: 12345document.addEventListener('click', (e) =&gt; &#123; if (document.activeElement.toString() === '[object HTMLButtonElement]') &#123; document.activeElement.blur() &#125;&#125;) Those code can blur the focus state on you clicked button, the focus highlight style will remove at the same time. But it is add event listener function, so please make sure you only run those code once before your remove this listener.]]></content>
+      <categories>
+        <category>Frontend</category>
+        <category>JavaScript</category>
+        <category>HTML</category>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>HTML</tag>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[About ES6 async and await key word]]></title>
+    <url>%2F2018%2F08%2F27%2FAbout-ES6-async-and-await-key-word%2F</url>
+    <content type="text"><![CDATA[The original article was published in 边城客栈]]></content>
+      <categories>
+        <category>Frontend</category>
+        <category>JavaScript</category>
+        <category>ES6</category>
+      </categories>
+      <tags>
+        <tag>ES6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Vue.js ElementUI i18n settings]]></title>
+    <url>%2F2018%2F08%2F27%2FVue-js-i18n-settings%2F</url>
+    <content type="text"><![CDATA[UsageSettingszh.js123module.exports = &#123; name: '用户名'&#125; en.js123module.exports = &#123; name: 'User Name'&#125; main.js1234567891011121314151617181920212223242526272829303132333435363738// import element ui language packageimport enLocale from 'element-ui/lib/locale/lang/en'import zhLocale from 'element-ui/lib/locale/lang/zh-CN'import VueI18n from 'vue-i18n'Vue.use(VueI18n)// set language messagesconst messages = &#123; 'zh': Object.assign(require('./i18n/zh'), zhLocale), 'en': Object.assign(require('./i18n/en'), enLocale)&#125;// set date formatconst dateTimeFormats = &#123; 'zh': &#123; short: &#123; year: 'numeric', month: 'short', day: 'numeric', hour12: false &#125;, long: &#123; year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: false &#125; &#125;, 'en': &#123; short: &#123; year: 'numeric', month: 'short', day: 'numeric', hour12: false &#125;, long: &#123; year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: false &#125; &#125;&#125;const i18n = new VueI18n(&#123; locale: Vue.config.lang, fallbackLocale: 'en', messages, dateTimeFormats&#125;) Useage1234&lt;template&gt; &lt;span&gt;&#123;&#123; $t('name') &#125;&#125;&lt;/span&gt; &lt;span&gt;&#123;&#123; $d(new Date(), 'short') &#125;&#125;&lt;/span&gt;&lt;/template&gt;]]></content>
+      <categories>
+        <category>Frontend</category>
+        <category>Vue.js</category>
+        <category>ElementUI</category>
+      </categories>
+      <tags>
+        <tag>ElementUI</tag>
+        <tag>Vue.js</tag>
+        <tag>i18n</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Use hexo and github to build blog site]]></title>
     <url>%2F2018%2F08%2F24%2FUse-hexo-and-github-to-build-blog%2F</url>
-    <content type="text"><![CDATA[What we need Github account Node.js Hexo Domain (If you have not a domain, you can just use the xxx.github.io) … Create your git repositoryGo to github, and create a repository named xxx.github.io (‘xxx’ means your username). NextTBD]]></content>
+    <content type="text"><![CDATA[What we need Github account Node.js Hexo Domain (If you have not a domain, you can just use the xxx.github.io) … Create your git repositoryGo to github, and create a repository named xxx.github.io (‘xxx’ means your username). Clone project to your disk1git clone git@github.com:xxx/xxx.github.io Install Node.jsLook nodejs.org Install hexo1npm install hexo TBD]]></content>
+      <categories>
+        <category>Frontend</category>
+        <category>Hexo</category>
+      </categories>
       <tags>
         <tag>Github</tag>
         <tag>hexo</tag>
@@ -16,11 +142,13 @@
     <content type="text"><![CDATA[In chrome settings, there are a default minimum font size setting. On Windows and Mac OS X, there are maybe 12px. So, when your page’s css font size value &lt; 12px, there will display 12px. To change the minimum font size in Chrome go to: 123settings &gt; advanced settings &gt; web content &gt; font size &gt; customise fonts&gt; scroll down to the bottom and you will see the &apos;minimum font size&apos; slider. 以上。]]></content>
       <categories>
         <category>Frontend</category>
+        <category>Browser</category>
+        <category>Chrome</category>
       </categories>
       <tags>
         <tag>Chrome</tag>
         <tag>font-size</tag>
-        <tag>css</tag>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -28,7 +156,8 @@
     <url>%2F2018%2F08%2F23%2FGithub-commit-message-fix-issue-isuee%2F</url>
     <content type="text"><![CDATA[About the git message, following keywords, followed by an issue number, will close the issue: close closes closed fix fixes fixed resolve resolves resolved If you do not want to close the issue, please mind the commit message. 1fix(fronted): fix issue #123 (If you close the issue without QA check…) 以上。]]></content>
       <categories>
-        <category>Project</category>
+        <category>Project Management</category>
+        <category>Git</category>
       </categories>
       <tags>
         <tag>Github</tag>
@@ -42,6 +171,8 @@
     <content type="text"><![CDATA[Overwrite the form-item component and add $t() on template. The component file path is PROJECT_PATH/node_modules/element-ui/packages/form/src/form-item.vue Copy that and overwrite it on your project, then change the code, In line 26, use the $t to do the i18n. 1234567891011121314151617181920212223242526272829303132&lt;template&gt; &lt;div class="el-form-item" :class="[&#123; 'el-form-item--feedback': elForm &amp;&amp; elForm.statusIcon, 'is-error': validateState === 'error', 'is-validating': validateState === 'validating', 'is-success': validateState === 'success', 'is-required': isRequired || required &#125;, sizeClass ? 'el-form-item--' + sizeClass : '' ]"&gt; &lt;label :for="labelFor" class="el-form-item__label" v-bind:style="labelStyle" v-if="label || $slots.label"&gt; &lt;slot name="label"&gt;&#123;&#123;label + form.labelSuffix&#125;&#125;&lt;/slot&gt; &lt;/label&gt; &lt;div class="el-form-item__content" v-bind:style="contentStyle"&gt; &lt;slot&gt;&lt;/slot&gt; &lt;transition name="el-zoom-in-top"&gt; &lt;div v-if="validateState === 'error' &amp;&amp; showMessage &amp;&amp; form.showMessage" class="el-form-item__error" :class="&#123; 'el-form-item__error--inline': typeof inlineMessage === 'boolean' ? inlineMessage : (elForm &amp;&amp; elForm.inlineMessage || false) &#125;" &gt;- &#123;&#123; validateMessage &#125;&#125;+ &#123;&#123; $t(validateMessage) &#125;&#125; &lt;/div&gt; &lt;/transition&gt; &lt;/div&gt; &lt;/div&gt;&lt;/template&gt; By the way, if you change the code like this, you need send the i18n key as message value. Like this, index.vue12345rules: &#123; name: [ &#123; required: true, message: 'nameRequired', trigger: 'blur' &#125; ]&#125; en.js123module.exports = &#123; nameRequired: 'Please input the name'&#125; zh.js123module.exports = &#123; nameRequired: '请输入姓名'&#125; 以上。]]></content>
       <categories>
         <category>Frontend</category>
+        <category>Vue.js</category>
+        <category>ElementUI</category>
       </categories>
       <tags>
         <tag>ElementUI</tag>
@@ -53,28 +184,6 @@
     <title><![CDATA[聊天评论测试用页面]]></title>
     <url>%2F2018%2F08%2F21%2FComments-Test-Page%2F</url>
     <content type="text"><![CDATA[本页面为评论测试用页面，以上。]]></content>
-      <categories>
-        <category>Testing</category>
-      </categories>
-      <tags>
-        <tag>Testing</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Asahi Second Post]]></title>
-    <url>%2F2018%2F08%2F21%2FAsahi-Second-Post%2F</url>
-    <content type="text"><![CDATA[これは日本語のテストポストてす、以上。]]></content>
-      <categories>
-        <category>Testing</category>
-      </categories>
-      <tags>
-        <tag>Testing</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Asahi First Post]]></title>
-    <url>%2F2018%2F08%2F21%2FAsahi-First-Post%2F</url>
-    <content type="text"><![CDATA[This is the first post]]></content>
       <categories>
         <category>Testing</category>
       </categories>
